@@ -1,12 +1,13 @@
 
 import Navbar from "../navbar/Navbar"
 import axios from "axios"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "./employeeList.css"
 
 function EmployeeList() {
     const [employees, setEmployees] = useState([]);
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('http://localhost:8000/all')
@@ -14,6 +15,11 @@ function EmployeeList() {
                 setEmployees(res.data);
             })
             .catch(err => console.log(err));
+        const token = localStorage.getItem("token");
+        console.log(token);
+        if (!token) {
+            navigate("/")
+        }
     }, []);
 
     const handleDelete = async (id) => {

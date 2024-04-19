@@ -5,6 +5,7 @@ import Admin from './pages/admin/Admin'
 import CreateEmployee from './components/create-employee/CreateEmployee'
 import EmployeeList from './components/employee-list/EmployeeList'
 import EditEmployee from './components/edit-employee/EditEmployee'
+import Register from './pages/register/Register'
 
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/admin' element={<Login />} />
-          <Route path='/' element={<Admin />} />
+          <Route path='/' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/admin' element={<Admin />} />
           <Route path='/create' element={<CreateEmployee />} />
           <Route path='/all' element={<EmployeeList />} />
           <Route path='/update/:id' element={<EditEmployee />} />

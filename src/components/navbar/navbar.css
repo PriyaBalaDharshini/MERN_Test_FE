@@ -36,17 +36,17 @@
     font-size: 14px;
 }
 
-button {
+.navbarListItem button {
     border: 1px solid white;
-    border-radius: 10px;
     font-size: 14px;
     padding: 5px 10px;
     cursor: pointer;
     background-color: transparent;
     color: white;
+    border-radius: 10px;
 }
 
-button:hover {
+.navbarListItem button:hover {
     background-color: white;
     color: black;
 }

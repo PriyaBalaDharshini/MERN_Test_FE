@@ -13,14 +13,14 @@ function Navbar() {
             <div className="navbarWrapper">
                 <div className="navbarLeft">
                     <ul className='navbarListItems'>
-                        <li className='navbarListItem' onClick={() => handleNavigate("/")}>Home</li>
+                        <li className='navbarListItem' onClick={() => handleNavigate("/admin")}>Home</li>
                         <li className='navbarListItem' onClick={() => handleNavigate("/all")}>Employee List</li>
                     </ul>
                 </div>
                 <div className="navbarRight">
                     <ul className='navbarListItems'>
-                        <li className='navbarListItem'>User Name</li>
-                        <li className='navbarListItem'> <button onClick={logout}>Logout</button> </li>
+
+                        <li className='navbarListItem'> < button onClick={logout}>Logout</button> </li>
                     </ul>
                 </div>
             </div>

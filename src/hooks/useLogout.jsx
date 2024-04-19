@@ -5,7 +5,7 @@ export const useLogout = () => {
 
     return () => {
 
-        sessionStorage.clear()
+        localStorage.clear()
         navigate('/')
     }
 }

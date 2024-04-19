@@ -65,10 +65,17 @@
     cursor: pointer;
 }
 
-.loginForgot {
-    text-align: center;
-    color: #f43346;
+.loginButton:hover {
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: #f43346;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
 }
+
 
 .loginRegister {
     height: 60px;
@@ -80,4 +87,21 @@
     cursor: pointer;
     width: 100%;
     align-self: center;
+}
+
+.loginRegister:hover {
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(94, 237, 94);
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    align-self: center;
+}
+
+.errorMessage {
+    text-align: center;
+    color: red;
 }

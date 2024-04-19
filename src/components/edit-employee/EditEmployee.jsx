@@ -17,14 +17,27 @@ function EditEmployee() {
 
     const { id } = useParams()
     const navigate = useNavigate()
-    /* useEffect(() => {
+
+    useEffect(() => {
         axios.get(`http://localhost:8000/update/${id}`)
             .then((res) => {
-                const data = res.data;
-                setName(data.f_Name)
+                const data = res.data
+                setName(data[0].f_Name);
+                setEmail(data[0].f_Email);
+                setMobile(data[0].f_Mobile);
+                setDesignation(data[0].f_Designation);
+                setGender(data[0].f_Gender);
             })
             .catch(err => console.log(err));
-    }, [id]) */
+
+        const token = localStorage.getItem("token");
+        console.log(token);
+        if (!token) {
+            navigate("/")
+        }
+
+
+    }, [id])
 
     const handleCheckboxChange = (e) => {
         const { value, checked } = e.target;
@@ -56,7 +69,7 @@ function EditEmployee() {
                 console.log(res);
                 navigate("/all")
             })
-            .catch(err => console.log(err));
+            .catch((err) => console.log(err));
     };
 
     return (
