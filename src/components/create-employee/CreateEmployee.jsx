@@ -32,7 +32,7 @@ function CreateEmployee() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/create", {
+        axios.post(`${import.meta.env.VITE_BE_URL}/create`, {
             f_Image: image,
             f_Name: name,
             f_Email: email,

@@ -9,8 +9,8 @@ function EmployeeList() {
     const [employees, setEmployees] = useState([]);
     const navigate = useNavigate()
 
-    useEffect(() => {
-        axios.get('http://localhost:8000/all')
+    const getData = async () => {
+        await axios.get(`${import.meta.env.VITE_BE_URL}/all`)
             .then(res => {
                 setEmployees(res.data);
             })
@@ -20,11 +20,15 @@ function EmployeeList() {
         if (!token) {
             navigate("/")
         }
+    }
+
+    useEffect(() => {
+        getData()
     }, []);
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8000/all/${id}`);
+            await axios.delete(`${import.meta.env.VITE_BE_URL}/all/${id}`);
             window.location.reload()
         } catch (error) {
             console.log(error);

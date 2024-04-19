@@ -19,7 +19,7 @@ function EditEmployee() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/update/${id}`)
+        axios.get(`${import.meta.env.VITE_BE_URL}/update/${id}`)
             .then((res) => {
                 const data = res.data
                 setName(data[0].f_Name);
@@ -55,7 +55,7 @@ function EditEmployee() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/update/${id}`, {
+        axios.put(`${import.meta.env.VITE_BE_URL}/update/${id}`, {
             f_Image: image || null,
             f_Name: name,
             f_Email: email,
