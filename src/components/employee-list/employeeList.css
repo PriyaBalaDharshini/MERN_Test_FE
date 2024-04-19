@@ -1,0 +1,22 @@
+.tableDiv {
+    display: flex;
+}
+
+.tableTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button {
+    color: black;
+}
+
+.tableWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.table {
+    text-align: center;
+}
