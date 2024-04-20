@@ -1,8 +1,8 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+New user need to register and existing user can login with credentials - Done
+There should be no dublicated while registering - Done
+If username or password is wrong need to alert - Done
+After login need to go the the admin dashboard - Done
+Need to Create, Update and Delete employee - Done
+Need to list all created employees and after Deleting an employee - Done.
+Logout should take us to the login page - done
+Without logging in one cant see the dashboar or crete employee - Done
