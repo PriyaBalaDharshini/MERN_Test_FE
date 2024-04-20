@@ -10,7 +10,7 @@ function EmployeeList() {
     const navigate = useNavigate()
 
     const getData = async () => {
-        await axios.get(`${import.meta.env.VITE_BE_URL}/all`)
+        await axios.get("http://localhost:8000/all")
             .then(res => {
                 setEmployees(res.data);
             })
@@ -28,7 +28,7 @@ function EmployeeList() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`${import.meta.env.VITE_BE_URL}/all/${id}`);
+            await axios.delete(`http://localhost:8000/all/${id}`);
             window.location.reload()
         } catch (error) {
             console.log(error);

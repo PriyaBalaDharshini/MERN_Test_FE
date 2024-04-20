@@ -19,7 +19,7 @@ function EditEmployee() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BE_URL}/update/${id}`)
+        axios.get(`http://localhost:8000/update/${id}`)
             .then((res) => {
                 const data = res.data
                 setName(data[0].f_Name);
@@ -55,7 +55,7 @@ function EditEmployee() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`${import.meta.env.VITE_BE_URL}/update/${id}`, {
+        axios.put(`http://localhost:8000/update/${id}`, {
             f_Image: image || null,
             f_Name: name,
             f_Email: email,
@@ -107,8 +107,8 @@ function EditEmployee() {
 
                         <div className="inputItems">
                             <label className="inputLabel" htmlFor="gender">Gender:</label>
-                            <input type="radio" id="femaleRadio" name="gender" value="Female" onChange={e => setGender(e.target.value)} checked={gender === "Female"} /> Female
-                            <input type="radio" id="maleRadio" name="gender" value="Male" onChange={e => setGender(e.target.value)} checked={gender === "Male"} /> Male
+                            <input type="radio" id="femaleRadio" name="gender" value="F" onChange={e => setGender(e.target.value)} checked={gender === "F"} /> Female
+                            <input type="radio" id="maleRadio" name="gender" value="M" onChange={e => setGender(e.target.value)} checked={gender === "M"} /> Male
                         </div>
 
                         <div className="inputItems">

@@ -32,7 +32,7 @@ function CreateEmployee() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${import.meta.env.VITE_BE_URL}/create`, {
+        axios.post("http://localhost:8000/create", {
             f_Image: image,
             f_Name: name,
             f_Email: email,
@@ -84,8 +84,8 @@ function CreateEmployee() {
 
                         <div className="inputItems">
                             <label className="inputLabel" htmlFor="gender">Gender:</label>
-                            <input type="radio" id="femaleRadio" name="gender" value="Female" onChange={e => setGender(e.target.value)} checked={gender === "Female"} /> Female
-                            <input type="radio" id="maleRadio" name="gender" value="Male" onChange={e => setGender(e.target.value)} checked={gender === "Male"} /> Male
+                            <input type="radio" id="femaleRadio" name="gender" value="F" onChange={e => setGender(e.target.value)} checked={gender === "F"} /> Female
+                            <input type="radio" id="maleRadio" name="gender" value="M" onChange={e => setGender(e.target.value)} checked={gender === "M"} /> Male
                         </div>
 
                         <div className="inputItems">
@@ -104,7 +104,6 @@ function CreateEmployee() {
                         <div className="inputItems">
                             <label className="inputLabel" htmlFor="imageUpload">Upload Image: </label>
                             <input type="file" id="imageUpload" accept="image/png, image/jpeg" onChange={handleImageChange} />
-
                         </div>
                         <div className="inputItems">
                             <label className="inputLabel" htmlFor="date">Created Date: </label>

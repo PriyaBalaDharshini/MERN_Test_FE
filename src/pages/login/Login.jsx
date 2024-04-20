@@ -9,15 +9,14 @@ function Login() {
     const [password, setPassword] = useState()
     const [errorMessage, setErrorMessage] = useState("");
 
-    console.log(import.meta.env.VITE_BE_URL);
     const handleLogin = async () => {
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BE_URL}`, { username, password });
+            const response = await axios.post("http://localhost:8000/", { username, password });
             console.log(response.data.message);
             localStorage.setItem("token", response.data.token)
             navigate("/admin");
         } catch (error) {
-            console.error(error.response.data.message);
+            console.log(error);
             setErrorMessage("Invalid username or password"); // Set error message
         }
     }
